@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col col-md"></div>
+  <div class="col-10 col-md-6">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h5>Inicio de sesión</h5>
+     
+      <label>Correo Electrónico</label>
+      <i class="fa fa-excalmation-circle uncheck"
+           *ngIf="loginForm.controls.email.invalid &&
+                  loginForm.controls.email.touched"></i>
+      <input type="mail" class="form-control"
+             id="inputEmail" autofocus
+             formControlName="email">
+      <p class="alert alert-danger"
+           *ngIf="loginForm.controls.email.invalid &&
+                  loginForm.controls.email.touched">
+                    Por favor escriba un email válido. </p>
+
+      <label>Contraseña</label>
+      <i class="fa fa-excalmation-circle uncheck"
+           *ngIf="loginForm.controls.password.invalid &&
+                  loginForm.controls.password.touched"></i>
+      <input type="password" class=form-control
+             id="inputPassword"
+             formControlName="password">
+      <p class="alert alert-danger"
+           *ngIf="loginForm.controls.password.invalid &&
+                  loginForm.controls.password.touched">
+                    Por favor escriba una contraseña válida. </p>
+      <p class="alert alert-danger"
+           *ngIf="enviado && !validado">
+                    Email y/o password no válidos. </p>
+      <hr>
+      <button type="submit" class="btn btn-primary"
+               [disabled]="!loginForm.valid">Iniciar</button>
+    </form>
+  </div>
+  <div class="col col-md">
+  </div>
+</div>
