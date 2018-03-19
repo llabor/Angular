@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'] /* array de una o más hojas de estilos */
 })
 export class AppComponent {
-  destino: String = 'Vector ITC Madrid';
+  destino: String = 'Madrid';
 }
